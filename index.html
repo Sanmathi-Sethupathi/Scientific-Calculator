@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form action="#" name="calculator">
+                    <div class="mb-3">
+                        <input type="text" id="scr" placeholder="0" name="screen" disabled class="form-control-lg">
+                    </div>
+                    <hr>
+
+                    <div class="onOffBtn">
+                        <input type="button" value="OFF" class="btn btn-danger" onclick="s_off()">
+                        <input type="button" value="ON" class="btn btn-success" onclick="s_on()">
+                    </div>
+
+                    <div class="numOpeBtn">
+                        <input type="button" value="C" class="btn btn-danger button" onclick="calculator.screen.value = '' ">
+                        <input type="button" value="CE" class="btn btn-danger button" onclick="calculator.screen.value = calculator.screen.value.slice(0, -1)">
+                        <input type="button" value="x!" class="btn btn-primary ope button" onclick="factorial()">
+                        <input type="button" value="&plusmn;" class="btn btn-primary ope button" onclick="negate()">
+
+                        <input type="button" value="x&#xb2;" class="btn btn-primary ope button" onclick="calculator.screen.value = Math.pow(calculator.screen.value, 2)">
+                        <input type="button" value="Mod" class="btn btn-primary ope button" onclick="calculator.screen.value += '%' ">
+                        <input type="button" value="Abs" class="btn btn-primary ope button" onclick="calculator.screen.value = Math.abs(calculator.screen.value)">
+                        <input type="button" value="%" class="btn btn-secondary ope button" onclick="percentage()">
+
+                        <input type="button" value="7" class="btn btn-light button" onclick="calculator.screen.value += '7' ">
+                        <input type="button" value="8" class="btn btn-light button" onclick="calculator.screen.value +='8' ">
+                        <input type="button" value="9" class="btn btn-light button" onclick="calculator.screen.value += '9' ">
+                        <input type="button" value="&divide;" class="btn btn-primary ope button" onclick="calculator.screen.value += '/' ">
+
+                        <input type="button" value="4" class="btn btn-light button" onclick="calculator.screen.value += '4' ">
+                        <input type="button" value="5" class="btn btn-light button" onclick="calculator.screen.value += '5' ">
+                        <input type="button" value="6" class="btn btn-light button" onclick="calculator.screen.value += '6' ">
+                        <input type="button" value="&times;" class="btn btn-primary ope button" onclick="calculator.screen.value += '*' ">
+
+                        <input type="button" value="1" class="btn btn-light button" onclick="calculator.screen.value += '1' ">
+                        <input type="button" value="2" class="btn btn-light button" onclick="calculator.screen.value += '2' ">
+                        <input type="button" value="3" class="btn btn-light button" onclick="calculator.screen.value += '3' ">
+                        <input type="button" value="&ndash;" class="btn btn-primary ope button" onclick="calculator.screen.value += '-' ">
+
+                        <input type="button" value="." class="btn btn-light button" onclick="calculator.screen.value += '.' ">
+                        <input type="button" value="0" class="btn btn-light button" onclick="calculator.screen.value += '0' ">
+                        <input type="button" value="00" class="btn btn-light button" onclick="calculator.screen.value += '00' ">
+                        <input type="button" value="+" class="btn btn-primary ope button" onclick="calculator.screen.value += '+' ">
+
+                        <input type="button" value="(" class="btn btn-primary button" onclick="calculator.screen.value += '(' ">
+                        <input type="button" value=")" class="btn btn-primary button" onclick="calculator.screen.value += ')' ">
+                        <input type="button" value="&radic;" class="btn btn-primary ope button" onclick="calculator.screen.value = Math.sqrt(calculator.screen.value)">
+                        <input type="button" value="=" class="btn btn-secondary ope button" onclick="equal()">
+                        
+                        <!-- History Button -->
+                        <input type="button" value="History" class="btn btn-secondary ope button" onclick="showHistory()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
